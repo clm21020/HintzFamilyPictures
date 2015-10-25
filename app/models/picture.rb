@@ -11,4 +11,6 @@
 
 class Picture < ActiveRecord::Base
 	validates :url, presence: true
+	
+	belongs_to :item
 end
