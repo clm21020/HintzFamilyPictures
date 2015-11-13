@@ -1,0 +1,4 @@
+<h1> <%= @item.title %> </h1>
+<% @item.key_words.each do |kw| %>
+	<div> <%= kw.word %> </div>
+<% end %>
