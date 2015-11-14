@@ -13,9 +13,22 @@
 
 	<label>
 		Pictures <br>
-		<input type="file" name="item[images][]"><br>
-		<input type="file" name="item[images][]"><br>
+		<div class="picture-pickers">
+			<input type="file" name="item[images][]"><br>		
+		</div>
 	</label><br>
+	<div class="button-add-another"> Add Another Picture </div>
 
 	<button type="submit">Save</button>
 </form>
+
+<script type="text/javascript">
+	var addAnother = function() {
+		// console.log("add another")
+		$('.picture-pickers').append('<input type="file" name="item[images][]"><br>');
+	};
+
+	$(function(){
+		$('.button-add-another').bind('click', addAnother)
+	});
+</script>
