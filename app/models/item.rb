@@ -12,5 +12,5 @@ class Item < ActiveRecord::Base
 	validates :title, presence: true
 
 	has_many :pictures
-	has_many :key_words
+	has_many :keywords
 end

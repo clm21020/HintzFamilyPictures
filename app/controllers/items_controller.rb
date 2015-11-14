@@ -11,7 +11,7 @@ class ItemsController < ApplicationController
 		@item = Item.new(title: item_params[:title])
 
 		if @item.save
-			@item.update(key_words: prepped_key_words)
+			@item.update(keywords: prepped_keywords)
 			# maybe update this later to ask to add pictures ???
 			redirect_to @item
 		else
@@ -44,16 +44,16 @@ class ItemsController < ApplicationController
 
 	private
 		def item_params
-			@item_params ||= params.require(:item).permit(:title, :key_words)
+			@item_params ||= params.require(:item).permit(:title, :keywords)
 		end
 
-		def prepped_key_words
-			key_words = item_params[:key_words].split(",").map(&:strip).uniq
+		def prepped_keywords
+			keywords = item_params[:keywords].split(",").map(&:strip).uniq
 			
-			key_words.map! do |kw|
-				KeyWord.new(word: kw)
+			keywords.map! do |kw|
+				Keyword.new(word: kw)
 			end
 
-			key_words
+			keywords
 		end
 end

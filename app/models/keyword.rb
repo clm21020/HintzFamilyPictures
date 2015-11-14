@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: key_words
+# Table name: keywords
 #
 #  id         :integer          not null, primary key
 #  item_id    :string           not null
@@ -9,7 +9,7 @@
 #  updated_at :datetime         not null
 #
 
-class KeyWord < ActiveRecord::Base
+class Keyword < ActiveRecord::Base
 	validates :word, :item_id, presence: true
 
 	belongs_to :item
