@@ -15,9 +15,10 @@
 class Picture < ActiveRecord::Base
 	belongs_to :item
 
-	has_attached_file :image, {
+	has_attached_file :image, styles: {
 		small: "80x80",
-		medium: "200x200"
+		medium: "200x200",
+		large: "600x600>"
 	}
 	validates_attachment :image, {
 		presence: true, 
