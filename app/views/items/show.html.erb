@@ -1,4 +1,11 @@
 <h1> <%= @item.title %> </h1>
+
+<% @item.pictures.each do |pic| %>
+	<%= image_tag pic.image.url(:large) %>
+	<%= image_tag pic.image.url(:medium) %>
+	<%= image_tag pic.image.url(:small) %>
+<% end %>
+
 <% @item.keywords.each do |kw| %>
 	<div> <%= kw.word %> </div>
 <% end %>

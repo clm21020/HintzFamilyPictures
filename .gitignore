@@ -14,3 +14,6 @@
 
 
 .DS_Store
+
+# Ignore the pictures saved by paperclip
+public/system/pictures/*

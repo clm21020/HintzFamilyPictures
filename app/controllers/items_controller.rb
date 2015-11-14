@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
 
 		if @item.save
 			@item.update(keywords: prepped_keywords)
-			# maybe update this later to ask to add pictures ???
+			@item.update(pictures: prepped_pictures)
 			redirect_to @item
 		else
 			render 'new'
@@ -44,7 +44,7 @@ class ItemsController < ApplicationController
 
 	private
 		def item_params
-			@item_params ||= params.require(:item).permit(:title, :keywords)
+			@item_params ||= params.require(:item).permit(:title, :keywords, images: [])
 		end
 
 		def prepped_keywords
@@ -55,5 +55,16 @@ class ItemsController < ApplicationController
 			end
 
 			keywords
+		end
+
+		def prepped_pictures
+			pictures = item_params[:images]
+			return [] if pictures.nil?
+
+			pictures.map! do |image|
+				Picture.new(image: image)
+			end
+			
+			pictures
 		end
 end
