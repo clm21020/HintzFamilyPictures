@@ -2,33 +2,40 @@
 
 <form action="<%= items_url %>" method="post" enctype="multipart/form-data">
 	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-	<label>
-		Title <br>
+	
+	<label> Title <br>
 		<input type="text" name="item[title]">
-	</label><br>
-	<label>
-		Keywords (separate with commas) <br>
+	</label><br><br>
+
+	<label> Keywords (separate with commas) <br>
 		<input type="text" name="item[keywords]">
-	</label><br>
+	</label><br><br>
 
-	<label>
-		Pictures <br>
-		<div class="picture-pickers">
-			<input type="file" name="item[images][]"><br>		
+	<label> Pictures <button type="button" class="button-add-another"> + </button></label><br>
+	<div class="picture-pickers">
+		<div class="picture-picker">
+			<input type="file" name="item[images][]">
+			<button type="button" class="button-remove-picker">X</button>
 		</div>
-	</label><br>
-	<div class="button-add-another"> Add Another Picture </div>
+	</div>
 
-	<button type="submit">Save</button>
+	<br><br> 
+
+	<button type="submit">Create This Item</button>
 </form>
 
 <script type="text/javascript">
 	var addAnother = function() {
-		// console.log("add another")
-		$('.picture-pickers').append('<input type="file" name="item[images][]"><br>');
+		$('.picture-pickers').append('<div class="picture-picker"> <input type="file" name="item[images][]"> <button type="button" class="button-remove-picker">X</button> </div>');
+	};
+
+	var removePicker = function(e) {
+		parent = e.target.parentElement;
+		parent.remove();
 	};
 
 	$(function(){
 		$('.button-add-another').bind('click', addAnother)
+		$('.picture-pickers').on('click', '.button-remove-picker', removePicker)
 	});
 </script>
