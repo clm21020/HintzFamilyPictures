@@ -1,0 +1,16 @@
+<h1>All Items</h1>
+<% @items.each do |item| %>
+	<a href="/items/<%= item.id %>">
+		<div class="index-tile">
+			<div><strong><%= item.title %></strong></div>
+			<% if item.pictures.empty? %>
+				<div class="pic-spot no-pic"></div>
+			<% else %>
+				<div class="pic-spot"><%= image_tag item.pictures.first.image.url(:medium) %></div>
+			<% end %>
+			<% item.keywords.each do |kw| %>
+				<span class="index-tile-kw"><%= kw.word %></span>
+			<% end %>
+		</div>
+	</a>
+<% end %>

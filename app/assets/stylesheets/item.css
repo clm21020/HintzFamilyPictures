@@ -1,0 +1,35 @@
+body {
+	font-family: helvetica;
+}
+
+a { 
+	color: inherit; 
+} 
+
+.index-tile {
+	border: solid gray 1px;
+	border-radius: 10px;
+	padding: 15px 15px 0px 15px;
+	float: left;
+	min-height: 285px;
+	width: 200px;
+	overflow: hidden;
+}
+
+.index-tile .pic-spot {
+	height: 200px;
+	width: 200px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.index-tile .no-pic {
+	background-color: lightgray;
+}
+
+span.index-tile-kw {
+	display: inline-block;
+	padding: 2px 5px;
+	margin-top: 3px;
+	background-color: lightgray;
+}
