@@ -1,0 +1,38 @@
+<% @user ||= User.new %>
+
+<h1>Welcome to the Hintz Family Catalog!</h1>
+
+<h2>If you've been here before, log in here:</h2>
+<form action="<%= session_url %>" method="post">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+	<label> Username/Email <br>
+		<input type="text" name="session[identification]">
+	</label><br>
+
+	<label> Password <br>
+		<input type="password" name="session[password]">
+	</label><br>
+
+	<button type="submit">Log In</button>
+</form>
+
+
+<h2>If you're new to the site, sign up here:</h2>
+<form action="<%= users_url %>" method="post">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+	<label> Username <br>
+		<input type="text" name="user[username]" value="<%= @user.username %>">
+	</label><br>
+
+	<label> Email <br>
+		<input type="text" name="user[email]" value="<%= @user.email %>">
+	</label><br>
+
+	<label> Password <br>
+		<input type="password" name="user[password]">
+	</label><br>
+
+	<button type="submit">Sign Up</button>
+</form>
