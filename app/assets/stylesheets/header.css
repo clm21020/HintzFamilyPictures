@@ -1,0 +1,45 @@
+header {
+	height: 36px;
+	border-bottom: 1px solid lightcyan;
+	background: aliceblue;
+}
+
+.header-piece {
+	padding-left: 10px;
+	padding-right: 10px;
+	background: aliceblue;
+}
+
+.header-left {
+	float: left;
+}
+
+.header-right {
+	float: right;
+}
+
+
+.header-piece > * {
+	display: inline-block;
+	float: left;
+}
+
+header span {
+	font-family: Georgia;
+	/*color: lightseagreen;*/
+	font-style: italic;
+	font-size: 16px;
+	height: 18px;
+	padding: 7px 15px;
+}
+
+header a {
+	text-decoration: none;
+	font-size: 16px;
+	height: 16px;
+	padding: 8px 10px;
+}
+
+header a:hover {
+	color: lightseagreen;
+}
