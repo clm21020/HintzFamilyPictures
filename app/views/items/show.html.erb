@@ -10,3 +10,11 @@
 <% @item.keywords.each do |kw| %>
 	<div> <%= kw.word %> </div>
 <% end %>
+
+<% if current_user && current_user.admin %>
+	<br>
+	<div class="admin-panel">
+		<%= link_to "Edit this item", edit_item_url(@item) %><br>
+		<a href="#">Future soft delete button</a>
+	</div>
+<% end %>
