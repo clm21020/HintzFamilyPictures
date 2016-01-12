@@ -8,19 +8,7 @@
 </head>
 <body>
 	<% if logged_in? %>
-		<header>
-			<div class="header-piece header-left">
-				<%= link_to "All Items", items_url %>
-			</div>
-
-			<div class="header-piece header-right">
-				<span><%= "Hello, #{current_user.username}!"%></span>
-				<%= link_to "Starred Items", "#" %>
-				<%= link_to "Hidden Items", "#" %>
-				<%= link_to "Account Info", user_url(current_user) %>
-				<%= link_to "Log Out", session_url, method: :delete %>
-			</div>
-		</header>
+		<%= render "layouts/logged_in_header" %>
 	<% end %>
 <%= yield %>
 
