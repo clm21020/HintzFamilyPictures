@@ -1,0 +1,15 @@
+<div class="index-tile">
+	<a href="/items/<%= item.id %>">
+		<% if item.pictures.empty? %>
+			<div class="pic-spot no-pic"></div>
+		<% else %>
+			<div class="pic-spot"><%= image_tag item.pictures.first.image.url(:medium) %></div>
+		<% end %>
+		<div class="item-title"><%= item.title %></div>
+	</a>
+	<div class="keywords">
+		<% item.keywords.each do |kw| %>
+			<span class="index-tile-kw"><%= kw.word %></span>
+		<% end %>
+	</div>
+</div>
