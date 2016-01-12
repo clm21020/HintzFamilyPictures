@@ -4,11 +4,11 @@
 	min-height: 300px;
 	width: 200px;
 	overflow: hidden;
+	position: relative; 
 }
 
 .index-tile .pic-spot {
 	width: 200px;
-	margin-top: 8px;
 	margin-bottom: 8px;
 }
 
@@ -38,3 +38,8 @@ span.index-tile-kw {
 	background-color: aliceblue;
 }
 
+.interest-level-buttons {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
