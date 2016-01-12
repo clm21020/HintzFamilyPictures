@@ -9,6 +9,8 @@
 <body>
 	<% if logged_in? %>
 		<%= render "layouts/logged_in_header" %>
+	<% elsif params[:controller] == "items" %>
+		<%= render "layouts/logged_out_header" %>
 	<% end %>
 <%= yield %>
 

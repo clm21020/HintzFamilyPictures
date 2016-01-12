@@ -1,5 +1,5 @@
 header {
-	height: 36px;
+	min-height: 36px;
 	border-bottom: 1px solid lightcyan;
 	background: aliceblue;
 }
@@ -33,7 +33,7 @@ header span {
 	padding: 7px 15px;
 }
 
-header a {
+header > div.header-piece > a {
 	font-size: 16px;
 	height: 16px;
 	padding: 8px 10px;
