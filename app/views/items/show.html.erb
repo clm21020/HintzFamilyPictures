@@ -1,6 +1,12 @@
 <h1> <%= @item.title %> </h1>
 <a href="/items">Click here to go back to the full list</a><br><br>
 
+<% if logged_in? %>
+	<div class="all-interests">
+		<div class="interested_so_far"> <%= interested_users(@item) %> </div>
+	</div><br>
+<% end %>
+
 <% @item.pictures.each do |pic| %>
 	<%= image_tag pic.image.url(:large) %>
 	<%= image_tag pic.image.url(:medium) %>
