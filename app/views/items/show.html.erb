@@ -7,11 +7,15 @@
 	</div><br>
 <% end %>
 
-<% @item.pictures.each do |pic| %>
-	<%= image_tag pic.image.url(:large) %>
-	<%= image_tag pic.image.url(:medium) %>
-	<%= image_tag pic.image.url(:small) %>
-<% end %>
+<div class="pic-slideshow">
+	<% if @item.pictures.empty? %>
+		<div style="padding: 10px">This item has no pictures.</div>
+	<% else %>
+		<% @item.pictures.each do |pic| %>
+			<%= image_tag pic.image.url(:large) %>
+		<% end %>
+	<% end %>
+</div>
 
 <% @item.keywords.each do |kw| %>
 	<div> <%= kw.word %> </div>

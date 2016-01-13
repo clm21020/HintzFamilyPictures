@@ -43,3 +43,11 @@ span.index-tile-kw {
 	top: 0px;
 	right: 0px;
 }
+
+div.pic-slideshow {
+	width: 80%; 
+	text-align: center;
+	background-color: aliceblue; 
+	white-space: nowrap; 
+	overflow-x: scroll
+}
