@@ -13,11 +13,6 @@
 		<% end %>
 	</div>
 	<% if logged_in? %>
-		<% user_interest = current_user_interest_level(item) %>
-		<div class="interest-level-buttons" data-item-id="<%= item.id %>" data-initial-interest="<%= user_interest %>">
-			<button type="button" class="interest-level-button interested-button" title="I'm interested">✓</button>
-			<button type="button" class="interest-level-button neutral-button" title="I'm neutral">O</button>
-			<button type="button" class="interest-level-button not-interested-button" title="I'm not interested">✗</button>
-		</div>
+		<%= render partial: "interest_level_buttons", locals: {item: item} %>
 	<% end %>
 </div>
