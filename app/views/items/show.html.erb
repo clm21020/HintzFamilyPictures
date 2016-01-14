@@ -4,6 +4,8 @@
 	<div class="all-interests">
 		<div class="interested_so_far"> <%= interested_users(@item) %> </div>
 	</div><br>
+	
+	<%= render partial: "interest_level_buttons", locals: {item: @item} %>
 <% end %>
 
 <div class="pic-slideshow">
