@@ -1,4 +1,14 @@
 module ItemsHelper
+	def current_user_interest_level(item)
+		cu_ranking = item.rankings.where(user_id: current_user.id)
+
+		if cu_ranking.empty?
+			"neutral"
+		else
+			cu_ranking.first.interest_level > 0 ? "interested" : "not interested"
+		end
+	end
+
 	def interested_users(item)
 		interested_usernames = item.interested_rankings.map { |ranking| ranking.user.username }
 
