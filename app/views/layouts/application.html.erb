@@ -12,7 +12,10 @@
 	<% elsif params[:controller] == "items" %>
 		<%= render "layouts/logged_out_header" %>
 	<% end %>
-<%= yield %>
+
+	<div class="content">
+		<%= yield %>
+	</div>
 
 </body>
 </html>
