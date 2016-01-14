@@ -1,18 +1,4 @@
 module ItemsHelper
-	# def interested_users(item)
-	# 	interested_usernames = item.interested_rankings.map { |ranking| ranking.user.username }
-
-	# 	if interested_users.empty?
-	# 		users_string = "No users have"
-	# 	elsif interested_users.length == 1
-	# 		users_string = "#{interested_usernames.first} has"
-	# 	else
-	# 		users_string = "#{comma_separate_multiples(interested_usernames)} have"
-	# 	end
-
-	# 	"#{users_string} expressed interest so far"
-	# end
-
 	def interested_users(item)
 		interested_usernames = item.interested_rankings.map { |ranking| ranking.user.username }
 
