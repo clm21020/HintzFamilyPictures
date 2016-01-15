@@ -1,12 +1,11 @@
 header {
-	min-height: 36px;
-	border-bottom: 1px solid lightcyan;
+	min-height: 45px;
 	background: aliceblue;
 }
 
 .header-piece {
-	padding-left: 10px;
-	padding-right: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
 	background: aliceblue;
 }
 
@@ -26,15 +25,23 @@ header {
 
 header span {
 	font-family: Georgia;
-	/*color: lightseagreen;*/
 	font-style: italic;
-	font-size: 16px;
-	height: 18px;
-	padding: 7px 15px;
+	font-size: 19px;
+	height: 20px;
+	padding: 12px 18px 13px;
 }
 
 header > div.header-piece > a {
-	font-size: 16px;
-	height: 16px;
-	padding: 8px 10px;
+	font-size: 17px;
+	height: 19px;
+	padding: 11px 12px 14px;
+}
+
+header > div.header-piece > a:hover {
+	background: #DBF1F6;
+}
+
+header > div.logged-out {
+	text-align: center;
+	padding: 5px 5%;
 }
