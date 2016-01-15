@@ -23,6 +23,26 @@ class ItemsController < ApplicationController
 		@item = Item.find(params[:id])
 	end
 
+	def rank
+		new_interest_level = params[:ranking]
+		item = Item.find(params[:id])
+		ranking = Ranking.where(user_id: current_user.id, item_id: item.id).first || 
+							Ranking.new(user_id: current_user.id, item_id: item.id)
+
+		ranking.interest_level = new_interest_level
+
+		respond_to do |format|
+			if new_interest_level == "0"
+				ranking.destroy
+				format.json { render json: new_interest_level, status: :ok }
+			elsif ranking.save
+	      format.json { render json: new_interest_level, status: :ok }
+	    else
+	    	format.json { render status: :bad_request}
+	    end
+	  end
+	end
+
 	# NEEDS A VIEW
 	def edit
 		@item = Item.find(params[:id])

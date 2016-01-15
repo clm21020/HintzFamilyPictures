@@ -25,3 +25,30 @@ var disableInterestLevelButtons = function(){
 		disableInterestLevelButton(buttonContainers[i]);
 	}
 };
+
+var swapDisabledButtons = function(currentlyDisabled, toBeDisabled, newRanking) {
+	currentlyDisabled.prop('disabled', false);
+	toBeDisabled.prop('disabled', true);
+}
+
+var updateInterestLevel = function(e) {
+	var buttonContainer = $(e.delegateTarget);
+	var disabledButton = buttonContainer.children('button:disabled');
+	var clickedButton = $(e.target);
+	var newInterestLevel = clickedButton.data('level');
+	var itemID = buttonContainer.data('item-id');
+	$.ajax({
+		url: '/items/' + itemID + '/rank',
+		data: {ranking: newInterestLevel},
+		dataType: 'json',
+		method: 'PUT',
+		success: swapDisabledButtons.bind(undefined, disabledButton, clickedButton)
+	});
+};
+
+var setupInterestLevelButtons = function(){
+	disableInterestLevelButtons();
+	$('.interest-level-buttons').on('click', 'button.interest-level-button', updateInterestLevel);
+}
+
+

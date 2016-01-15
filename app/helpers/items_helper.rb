@@ -2,7 +2,7 @@ module ItemsHelper
 	def current_user_interest_level(item)
 		cu_ranking = item.rankings.where(user_id: current_user.id)
 
-		if cu_ranking.empty?
+		if cu_ranking.empty? || cu_ranking.first.interest_level == 0
 			"neutral"
 		else
 			cu_ranking.first.interest_level > 0 ? "interested" : "not interested"
