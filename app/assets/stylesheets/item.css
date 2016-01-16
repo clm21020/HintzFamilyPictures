@@ -44,6 +44,34 @@ span.index-tile-kw {
 	right: 0px;
 }
 
+.interest-level-buttons > button {
+	font-size: 14px;
+	color: black;
+	background-color: rgba(255, 255, 255, .9);
+	padding: 0px;
+	width: 21px;
+	height: 21px;
+	border: none;
+	border: 1px solid rgba(100, 100, 100, .9);
+	border-radius: 35%;
+}
+
+.interest-level-buttons > button:not(:disabled):hover {
+	color: lightseagreen;
+}
+
+.interest-level-buttons > button.interested-button:disabled {
+	background-color: rgba(200, 255, 200, .9);
+}
+
+.interest-level-buttons > button.neutral-button:disabled {
+	background-color: rgba(255, 255, 200, .9);
+}
+
+.interest-level-buttons > button.not-interested-button:disabled {
+	background-color: rgba(255, 200, 200, .9);
+}
+
 div.pic-slideshow {
 	width: 100%; 
 	text-align: center;
