@@ -2,8 +2,10 @@ class ItemsController < ApplicationController
 	def index
 		if current_user && params[:cu_interest_level] == "interested"
 			@items = current_user.interests.includes(:keywords, :pictures)
+			@title = "My Interests"
 		else
 			@items = Item.includes(:keywords, :pictures)
+			@title = "All Items"
 		end
 	end
 
