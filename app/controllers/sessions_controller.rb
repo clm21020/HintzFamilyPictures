@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
 		if @user
 			log_in!(@user)
-			redirect_to @user
+			redirect_to items_url
 		else
 			render "static_pages/welcome"
 		end
