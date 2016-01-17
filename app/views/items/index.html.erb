@@ -1,8 +1,10 @@
 <h1><%= @title %></h1>
 
-<% @items.each do |item| %>
-	<%= render partial: "item_tile", locals: {item: item} %>
-<% end %>
+<div class="index-tiles">
+	<% @items.each do |item| %>
+		<%= render partial: "item_tile", locals: {item: item} %>
+	<% end %>
+</div>
 
 
 <script type="text/javascript">

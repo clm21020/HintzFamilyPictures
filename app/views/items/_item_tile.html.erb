@@ -5,14 +5,15 @@
 		<% else %>
 			<div class="pic-spot"><%= image_tag item.pictures.first.image.url(:medium) %></div>
 		<% end %>
-		<div class="item-title"><%= item.title %></div>
 	</a>
-	<div class="keywords">
-		<% item.keywords.each do |kw| %>
-			<span class="index-tile-kw"><%= kw.word %></span>
-		<% end %>
-	</div>
 	<% if logged_in? %>
 		<%= render partial: "interest_level_buttons", locals: {item: item} %>
 	<% end %>
+	<a href="/items/<%= item.id %>"><div class="item-title"><%= item.title %></div></a>
+	<div class="keywords">
+		<% item.keywords.each do |kw| %>
+			<span class="kw index-tile-kw"><%= kw.word %></span>
+		<% end %>
+	</div>
+	
 </div>

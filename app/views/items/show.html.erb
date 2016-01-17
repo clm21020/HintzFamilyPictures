@@ -1,11 +1,11 @@
 <h1> <%= @item.title %> </h1>
 
 <% if logged_in? %>
-	<div class="all-interests">
-		<div class="interested_so_far"> <%= interested_users(@item) %> </div>
+	<div class="display-all-interests clearfix">
+		<%= render partial: "interest_level_buttons", locals: {item: @item} %>
+		<div class="interested-so-far"> <%= interested_users(@item) %> </div>
 	</div><br>
 	
-	<%= render partial: "interest_level_buttons", locals: {item: @item} %>
 <% end %>
 
 <div class="pic-slideshow">
@@ -18,9 +18,12 @@
 	<% end %>
 </div>
 
-<% @item.keywords.each do |kw| %>
-	<div> <%= kw.word %> </div>
-<% end %>
+<div class="keywords">
+	<% @item.keywords.each do |kw| %>
+		<span class="kw show-kw"> <%= kw.word %> </span>
+	<% end %>
+</div>
+<br><br><br>
 
 <% if current_user && current_user.admin %>
 	<br>
