@@ -39,3 +39,10 @@ div.content {
 	display: block;
 	clear: both;
 }
+
+h1 {
+	font-weight: normal;
+	border-bottom: 2px solid lightseagreen;
+	padding-bottom: 15px;
+	text-align: center;
+}
