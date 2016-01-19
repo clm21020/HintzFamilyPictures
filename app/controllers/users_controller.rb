@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+	before_action :ensure_logged_in, except: :create
+	before_action :ensure_authorized, except: :create
+
 	def create
 		@user = User.new(user_params)
 
@@ -49,5 +52,13 @@ class UsersController < ApplicationController
 
 	def update_password_params
 		params.require(:user).permit(:old_password, :new_password)
+	end
+
+	def ensure_logged_in
+		redirect_to welcome_url unless logged_in?
+	end
+
+	def ensure_authorized
+		redirect_to	items_url unless params[:id] == current_user.id.to_s || current_user.admin?
 	end
 end
