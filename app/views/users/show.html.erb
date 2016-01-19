@@ -1,1 +1,6 @@
-<p>Hello <%= @user.username %></p>
+<h1>Your Info</h1>
+
+<p>Username: <%= @user.username %></p>
+<p>Email Address: <%= @user.email %></p>
+<p>If any of the above info looks incorrect, <%= link_to "click here", "#" %></p>
+<p>If you would like to change your password, <%= link_to "click here", "#" %></p>
