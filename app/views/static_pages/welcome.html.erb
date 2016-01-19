@@ -15,10 +15,10 @@
 	<label> Password <br>
 		<input type="password" name="session[password]">
 	</label>
-	<button type="submit">Log In</button>
+	<div class="buttons">
+		<button type="submit">Log In</button>
+	</div>
 </form>
-<br>
-<br>
 
 <form action="<%= users_url %>" method="post">
 	<h2>Sign Up</h2>
@@ -36,5 +36,7 @@
 	<label> Password <br>
 		<input type="password" name="user[password]">
 	</label>
-	<button type="submit">Sign Up</button>
+	<div class="buttons">
+		<button type="submit">Sign Up</button>
+	</div>
 </form>

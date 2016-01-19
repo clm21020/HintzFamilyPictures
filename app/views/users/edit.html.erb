@@ -12,5 +12,8 @@
 		<input type="text" name="user[email]" value="<%= @user.email %>">
 	</label>
 
-	<button type="submit">Update</button>
+	<div class="buttons">
+		<button type="submit">Update</button>
+		<a href="<%= user_url(@user) %>"><button type="button" class="cancel">Cancel</button></a>
+	</div>
 </form>
