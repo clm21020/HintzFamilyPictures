@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 
 		if @user.save
+			log_in!(@user)
 			redirect_to items_url
 		else
 			render "static_pages/welcome"
