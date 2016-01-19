@@ -1,4 +1,7 @@
 class ItemsController < ApplicationController
+	before_action :ensure_logged_in, only: [:new, :create, :edit, :update, :destroy]
+	before_action :ensure_admin, only: [:new, :create, :edit, :update, :destroy]
+
 	def index
 		if current_user && params[:cu_interest_level] == "interested"
 			@items = current_user.interests.includes(:keywords, :pictures)
@@ -92,5 +95,9 @@ class ItemsController < ApplicationController
 			end
 			
 			pictures
+		end
+
+		def ensure_admin
+			redirect_to items_url unless current_user.admin?
 		end
 end

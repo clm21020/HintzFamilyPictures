@@ -55,10 +55,6 @@ class UsersController < ApplicationController
 		params.require(:user).permit(:old_password, :new_password)
 	end
 
-	def ensure_logged_in
-		redirect_to welcome_url unless logged_in?
-	end
-
 	def ensure_authorized
 		redirect_to	items_url unless params[:id] == current_user.id.to_s || current_user.admin?
 	end
