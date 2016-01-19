@@ -1,6 +1,7 @@
 <% @user ||= User.new %>
 
 <h1>Welcome to the Hintz Family Catalog!</h1>
+<p class="description">To get the full functionality of this site, either sign up or log in below.<br>If you just want to browse some pictures first, you can skip this step by <a href="/items"><em>clicking here</em></a>.</p>
 
 <form action="<%= session_url %>" method="post">
 	<h2>Log In</h2>
