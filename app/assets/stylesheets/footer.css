@@ -1,0 +1,14 @@
+footer {
+	position: absolute;
+	width: 100%;
+	background: aliceblue;
+	border-top: solid 1px #DBF1F6;
+	text-align: center;
+	padding: 20px 0px 25px;
+}
+
+footer > p {
+	font-size: 16px;
+	padding: 2px;
+	margin: 0px;
+}
