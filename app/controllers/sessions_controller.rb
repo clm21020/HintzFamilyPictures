@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
 			log_in!(@user)
 			redirect_to items_url
 		else
+			flash.now[:login_errors] = login_errors
 			render "static_pages/welcome"
 		end
 	end
@@ -18,5 +19,15 @@ class SessionsController < ApplicationController
 	private
 	def session_params
 		params.require(:session).permit(:identification, :password)
+	end
+
+	def login_errors
+		errors = []
+		
+		errors << "Username/Email can't be blank" if session_params[:identification].blank?
+		errors << "Password can't be blank" if session_params[:password].blank?
+		errors << "Incorrect username/email or password" if errors.empty?
+
+		errors
 	end
 end

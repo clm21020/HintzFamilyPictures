@@ -26,6 +26,20 @@ form > h2 + p.description {
 	margin-bottom: 22px;
 }
 
+form > div.error-messages {
+	padding: 10px 0px;
+	background-color: rgba(255, 200, 200, .5);
+	width: 90%;
+	margin: 0px auto;
+}
+
+div.error-messages > p.error-message {
+	text-align: center;
+	color: darkred;
+	font-size: 12px;
+	margin: 0px;
+}
+
 label {
 	padding-left: 11%;
 }
