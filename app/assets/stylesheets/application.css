@@ -14,9 +14,15 @@
  *= require_self
  */
 
+html {
+	height: 100%;
+}
+
 body {
 	font-family: helvetica;
 	margin: 0px;
+	min-height: 100%;
+	position: relative;
 }
 
 a { 
@@ -32,6 +38,7 @@ div.content {
 	position: relative;
 	width: 80%;
 	margin: 0 auto;
+	padding-bottom: 90px; /*prevent overlap with footer*/
 }
 
 .clearfix:after {

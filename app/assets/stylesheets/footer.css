@@ -1,5 +1,6 @@
 footer {
 	position: absolute;
+	bottom: 0px;
 	width: 100%;
 	background: aliceblue;
 	border-top: solid 1px #DBF1F6;
